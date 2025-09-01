@@ -1,0 +1,20 @@
+# SSH Keys
+*.pem
+*.key
+*-key-*
+
+# Instance details
+*-details.txt
+*-details.txt.terminated-*
+
+# System files
+.DS_Store
+.current-key-name
+.current-key-path
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
