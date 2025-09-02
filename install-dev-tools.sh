@@ -98,9 +98,15 @@ echo -e "${BLUE}Step 5: Installing Claude Code${NC}"
 run_remote_bash "export NVM_DIR=\"\$HOME/.nvm\" && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && npm install -g @anthropic-ai/claude-code"
 echo "Claude Code installed successfully"
 
+# Install Playwright with Chrome
+echo ""
+echo -e "${BLUE}Step 6: Installing Playwright with Chrome${NC}"
+run_remote_bash "export NVM_DIR=\"\$HOME/.nvm\" && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && npx playwright install chrome"
+echo "Playwright with Chrome installed successfully"
+
 # Verify installations
 echo ""
-echo -e "${BLUE}Step 6: Verifying installations${NC}"
+echo -e "${BLUE}Step 7: Verifying installations${NC}"
 echo ""
 echo -e "${YELLOW}Installed versions:${NC}"
 
@@ -120,7 +126,7 @@ echo "  Claude Code: $CLAUDE_VERSION"
 
 # Create a helper script on the EC2 instance
 echo ""
-echo -e "${BLUE}Step 7: Creating helper script${NC}"
+echo -e "${BLUE}Step 8: Creating helper script${NC}"
 run_remote "cat > ~/setup-env.sh << 'EOF'
 #!/bin/bash
 # Source this file to set up the development environment
@@ -156,3 +162,4 @@ echo "  - uv: Python package manager"
 echo "  - nvm: Node version manager"
 echo "  - node/npm: JavaScript runtime and package manager"
 echo "  - claude: Claude Code CLI"
+echo "  - playwright: Browser automation with Chrome"
